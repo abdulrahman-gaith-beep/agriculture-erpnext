@@ -118,23 +118,15 @@ after_uninstall = "agriculture.agriculture.setup.cleanup_role_and_permissions"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"agriculture.tasks.all"
-# 	],
-# 	"daily": [
-# 		"agriculture.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"agriculture.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"agriculture.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"agriculture.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"agriculture.agriculture.tasks.check_crop_cycle_status",
+		"agriculture.agriculture.tasks.check_analysis_reminders",
+	],
+	"weekly": [
+		"agriculture.agriculture.tasks.calculate_crop_cycle_financials",
+	],
+}
 
 # Testing
 # -------
@@ -193,16 +185,19 @@ after_uninstall = "agriculture.agriculture.setup.cleanup_role_and_permissions"
 
 global_search_doctypes = {
 	"Agriculture": [
-		{'doctype': 'Weather', 'index': 1},
-		{'doctype': 'Soil Texture', 'index': 2},
-		{'doctype': 'Water Analysis', 'index': 3},
-		{'doctype': 'Soil Analysis', 'index': 4},
-		{'doctype': 'Plant Analysis', 'index': 5},
-		{'doctype': 'Agriculture Analysis Criteria', 'index': 6},
+		{'doctype': 'Farm', 'index': 1},
+		{'doctype': 'Crop', 'index': 2},
+		{'doctype': 'Crop Cycle', 'index': 3},
+		{'doctype': 'Harvest Record', 'index': 4},
+		{'doctype': 'Fertilizer Application', 'index': 5},
+		{'doctype': 'Fertilizer', 'index': 6},
 		{'doctype': 'Disease', 'index': 7},
-		{'doctype': 'Crop', 'index': 8},
-		{'doctype': 'Fertilizer', 'index': 9},
-		{'doctype': 'Crop Cycle', 'index': 10}
+		{'doctype': 'Weather', 'index': 8},
+		{'doctype': 'Soil Analysis', 'index': 9},
+		{'doctype': 'Water Analysis', 'index': 10},
+		{'doctype': 'Plant Analysis', 'index': 11},
+		{'doctype': 'Soil Texture', 'index': 12},
+		{'doctype': 'Agriculture Analysis Criteria', 'index': 13}
 	]
 }
 

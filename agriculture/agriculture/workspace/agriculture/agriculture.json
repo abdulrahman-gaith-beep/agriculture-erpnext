@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Reports & Masters\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Crops & Lands\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Analytics\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Diseases & Fertilizers\", \"col\": 4}}]",
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Reports & Masters\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Farms & Land\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Crop Management\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Analytics\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Inputs & Diseases\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 4}}]",
  "creation": "2020-03-02 17:23:34.339274",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -13,7 +13,37 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Crops & Lands",
+   "label": "Farms & Land",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Farm",
+   "link_count": 0,
+   "link_to": "Farm",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Location",
+   "link_count": 0,
+   "link_to": "Location",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Crop Management",
    "link_count": 0,
    "onboard": 0,
    "type": "Card Break"
@@ -44,9 +74,39 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Location",
+   "label": "Disease",
    "link_count": 0,
-   "link_to": "Location",
+   "link_to": "Disease",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Harvest Record",
+   "link_count": 0,
+   "link_to": "Harvest Record",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Fertilizer Application",
+   "link_count": 0,
+   "link_to": "Fertilizer Application",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -58,17 +118,6 @@
    "link_count": 0,
    "onboard": 0,
    "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Plant Analysis",
-   "link_count": 0,
-   "link_to": "Plant Analysis",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   },
   {
    "dependencies": "",
@@ -96,6 +145,17 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Plant Analysis",
+   "link_count": 0,
+   "link_to": "Plant Analysis",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Soil Texture",
    "link_count": 0,
    "link_to": "Soil Texture",
@@ -115,6 +175,25 @@
    "type": "Link"
   },
   {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Inputs & Diseases",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Fertilizer",
+   "link_count": 0,
+   "link_to": "Fertilizer",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
@@ -128,7 +207,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Diseases & Fertilizers",
+   "label": "Settings",
    "link_count": 0,
    "onboard": 0,
    "type": "Card Break"
@@ -137,26 +216,15 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Disease",
+   "label": "Agriculture Settings",
    "link_count": 0,
-   "link_to": "Disease",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Fertilizer",
-   "link_count": 0,
-   "link_to": "Fertilizer",
+   "link_to": "Agriculture Settings",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
   }
  ],
- "modified": "2021-08-05 12:15:54.595198",
+ "modified": "2024-01-18 10:00:00.000000",
  "modified_by": "Administrator",
  "module": "Agriculture",
  "name": "Agriculture",
@@ -166,6 +234,29 @@
  "restrict_to_domain": "Agriculture",
  "roles": [],
  "sequence_id": 3,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Active Crop Cycles",
+   "link_to": "Crop Cycle",
+   "stats_filter": "[['status', '=', 'Active']]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Farms",
+   "link_to": "Farm",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Recent Harvests",
+   "link_to": "Harvest Record",
+   "type": "DocType"
+  }
+ ],
  "title": "Agriculture"
 }

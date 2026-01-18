@@ -1,0 +1,387 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:farm_name",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_section",
+  "farm_name",
+  "farm_code",
+  "owner_name",
+  "column_break_basic",
+  "status",
+  "farm_type",
+  "acquisition_date",
+  "location_section",
+  "location",
+  "address",
+  "column_break_location",
+  "latitude",
+  "longitude",
+  "altitude",
+  "area_section",
+  "total_area",
+  "area_uom",
+  "cultivable_area",
+  "column_break_area",
+  "irrigated_area",
+  "non_cultivable_area",
+  "soil_and_climate_section",
+  "primary_soil_type",
+  "soil_ph_range",
+  "climate_zone",
+  "column_break_soil",
+  "avg_annual_rainfall",
+  "avg_temperature_min",
+  "avg_temperature_max",
+  "water_resources_section",
+  "water_sources",
+  "irrigation_systems",
+  "infrastructure_section",
+  "has_storage",
+  "storage_capacity",
+  "has_cold_storage",
+  "column_break_infra",
+  "has_equipment_shed",
+  "has_processing_unit",
+  "certifications_section",
+  "is_organic_certified",
+  "organic_certification_body",
+  "organic_valid_until",
+  "column_break_cert",
+  "other_certifications",
+  "fields_section",
+  "fields",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "farm_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Farm Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "farm_code",
+   "fieldtype": "Data",
+   "label": "Farm Code",
+   "description": "Internal reference code"
+  },
+  {
+   "fieldname": "owner_name",
+   "fieldtype": "Data",
+   "label": "Owner Name"
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nFallow\nUnder Development"
+  },
+  {
+   "fieldname": "farm_type",
+   "fieldtype": "Select",
+   "label": "Farm Type",
+   "options": "\nCrop Farm\nMixed Farm\nOrchard\nVineyard\nGreenhouse\nNursery\nPasture"
+  },
+  {
+   "fieldname": "acquisition_date",
+   "fieldtype": "Date",
+   "label": "Acquisition Date"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location",
+   "description": "ERPNext Location with geospatial data"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_location",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "6"
+  },
+  {
+   "fieldname": "altitude",
+   "fieldtype": "Float",
+   "label": "Altitude (meters)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "area_section",
+   "fieldtype": "Section Break",
+   "label": "Area Details"
+  },
+  {
+   "fieldname": "total_area",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Area",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "default": "Hectare",
+   "fieldname": "area_uom",
+   "fieldtype": "Link",
+   "label": "Area UOM",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cultivable_area",
+   "fieldtype": "Float",
+   "label": "Cultivable Area",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_area",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "irrigated_area",
+   "fieldtype": "Float",
+   "label": "Irrigated Area",
+   "precision": "2"
+  },
+  {
+   "fieldname": "non_cultivable_area",
+   "fieldtype": "Float",
+   "label": "Non-Cultivable Area",
+   "precision": "2",
+   "description": "Roads, buildings, water bodies, etc."
+  },
+  {
+   "fieldname": "soil_and_climate_section",
+   "fieldtype": "Section Break",
+   "label": "Soil & Climate"
+  },
+  {
+   "fieldname": "primary_soil_type",
+   "fieldtype": "Select",
+   "label": "Primary Soil Type",
+   "options": "\nClay\nSandy\nLoamy\nSilty\nPeaty\nChalky\nSandy Loam\nClay Loam\nSilt Loam"
+  },
+  {
+   "fieldname": "soil_ph_range",
+   "fieldtype": "Data",
+   "label": "Soil pH Range",
+   "description": "e.g., 6.0 - 7.5"
+  },
+  {
+   "fieldname": "climate_zone",
+   "fieldtype": "Select",
+   "label": "Climate Zone",
+   "options": "\nTropical\nSubtropical\nMediterranean\nTemperate\nContinental\nArid\nSemi-Arid"
+  },
+  {
+   "fieldname": "column_break_soil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "avg_annual_rainfall",
+   "fieldtype": "Float",
+   "label": "Avg Annual Rainfall (mm)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "avg_temperature_min",
+   "fieldtype": "Float",
+   "label": "Avg Min Temperature (C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "avg_temperature_max",
+   "fieldtype": "Float",
+   "label": "Avg Max Temperature (C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "water_resources_section",
+   "fieldtype": "Section Break",
+   "label": "Water Resources"
+  },
+  {
+   "fieldname": "water_sources",
+   "fieldtype": "Table",
+   "label": "Water Sources",
+   "options": "Farm Water Source"
+  },
+  {
+   "fieldname": "irrigation_systems",
+   "fieldtype": "Table",
+   "label": "Irrigation Systems",
+   "options": "Farm Irrigation System"
+  },
+  {
+   "fieldname": "infrastructure_section",
+   "fieldtype": "Section Break",
+   "label": "Infrastructure"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_storage",
+   "fieldtype": "Check",
+   "label": "Has Storage Facility"
+  },
+  {
+   "depends_on": "has_storage",
+   "fieldname": "storage_capacity",
+   "fieldtype": "Float",
+   "label": "Storage Capacity (tonnes)"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_cold_storage",
+   "fieldtype": "Check",
+   "label": "Has Cold Storage"
+  },
+  {
+   "fieldname": "column_break_infra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_equipment_shed",
+   "fieldtype": "Check",
+   "label": "Has Equipment Shed"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_processing_unit",
+   "fieldtype": "Check",
+   "label": "Has Processing Unit"
+  },
+  {
+   "fieldname": "certifications_section",
+   "fieldtype": "Section Break",
+   "label": "Certifications"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_organic_certified",
+   "fieldtype": "Check",
+   "label": "Organic Certified"
+  },
+  {
+   "depends_on": "is_organic_certified",
+   "fieldname": "organic_certification_body",
+   "fieldtype": "Data",
+   "label": "Certification Body"
+  },
+  {
+   "depends_on": "is_organic_certified",
+   "fieldname": "organic_valid_until",
+   "fieldtype": "Date",
+   "label": "Valid Until"
+  },
+  {
+   "fieldname": "column_break_cert",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_certifications",
+   "fieldtype": "Small Text",
+   "label": "Other Certifications",
+   "description": "GlobalGAP, Fair Trade, etc."
+  },
+  {
+   "fieldname": "fields_section",
+   "fieldtype": "Section Break",
+   "label": "Fields/Plots"
+  },
+  {
+   "fieldname": "fields",
+   "fieldtype": "Table",
+   "label": "Fields",
+   "options": "Farm Field"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Farm",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

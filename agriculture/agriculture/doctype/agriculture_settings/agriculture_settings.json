@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "default_area_uom",
+  "default_yield_uom",
+  "default_spacing_uom",
+  "column_break_general",
+  "auto_create_project",
+  "auto_create_tasks",
+  "default_crop_warehouse",
+  "analysis_section",
+  "default_soil_analysis_lab",
+  "default_water_analysis_lab",
+  "column_break_analysis",
+  "soil_testing_reminder_days",
+  "water_testing_reminder_days",
+  "notifications_section",
+  "enable_weather_alerts",
+  "weather_alert_email",
+  "column_break_notifications",
+  "enable_disease_alerts",
+  "disease_alert_email",
+  "financial_section",
+  "default_currency",
+  "cost_center",
+  "column_break_financial",
+  "track_labor_costs",
+  "track_equipment_costs",
+  "compliance_section",
+  "enable_organic_tracking",
+  "organic_certification_body",
+  "column_break_compliance",
+  "enable_traceability",
+  "traceability_prefix",
+  "integrations_section",
+  "weather_api_provider",
+  "weather_api_key"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General Settings"
+  },
+  {
+   "default": "Hectare",
+   "fieldname": "default_area_uom",
+   "fieldtype": "Link",
+   "label": "Default Area UOM",
+   "options": "UOM"
+  },
+  {
+   "default": "Kilogram",
+   "fieldname": "default_yield_uom",
+   "fieldtype": "Link",
+   "label": "Default Yield UOM",
+   "options": "UOM"
+  },
+  {
+   "default": "Centimeter",
+   "fieldname": "default_spacing_uom",
+   "fieldtype": "Link",
+   "label": "Default Spacing UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_general",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_create_project",
+   "fieldtype": "Check",
+   "label": "Auto-create Project for Crop Cycles"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_create_tasks",
+   "fieldtype": "Check",
+   "label": "Auto-create Tasks from Crop Template"
+  },
+  {
+   "fieldname": "default_crop_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Crop Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "analysis_section",
+   "fieldtype": "Section Break",
+   "label": "Analysis Settings"
+  },
+  {
+   "fieldname": "default_soil_analysis_lab",
+   "fieldtype": "Data",
+   "label": "Default Soil Analysis Lab"
+  },
+  {
+   "fieldname": "default_water_analysis_lab",
+   "fieldtype": "Data",
+   "label": "Default Water Analysis Lab"
+  },
+  {
+   "fieldname": "column_break_analysis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "180",
+   "fieldname": "soil_testing_reminder_days",
+   "fieldtype": "Int",
+   "label": "Soil Testing Reminder (Days)",
+   "description": "Days between soil tests"
+  },
+  {
+   "default": "90",
+   "fieldname": "water_testing_reminder_days",
+   "fieldtype": "Int",
+   "label": "Water Testing Reminder (Days)",
+   "description": "Days between water tests"
+  },
+  {
+   "fieldname": "notifications_section",
+   "fieldtype": "Section Break",
+   "label": "Notifications"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_weather_alerts",
+   "fieldtype": "Check",
+   "label": "Enable Weather Alerts"
+  },
+  {
+   "depends_on": "enable_weather_alerts",
+   "fieldname": "weather_alert_email",
+   "fieldtype": "Data",
+   "label": "Weather Alert Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_notifications",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_disease_alerts",
+   "fieldtype": "Check",
+   "label": "Enable Disease Alerts"
+  },
+  {
+   "depends_on": "enable_disease_alerts",
+   "fieldname": "disease_alert_email",
+   "fieldtype": "Data",
+   "label": "Disease Alert Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "financial_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Settings"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Default Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_financial",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "track_labor_costs",
+   "fieldtype": "Check",
+   "label": "Track Labor Costs"
+  },
+  {
+   "default": "1",
+   "fieldname": "track_equipment_costs",
+   "fieldtype": "Check",
+   "label": "Track Equipment Costs"
+  },
+  {
+   "fieldname": "compliance_section",
+   "fieldtype": "Section Break",
+   "label": "Compliance & Traceability"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_organic_tracking",
+   "fieldtype": "Check",
+   "label": "Enable Organic Certification Tracking"
+  },
+  {
+   "depends_on": "enable_organic_tracking",
+   "fieldname": "organic_certification_body",
+   "fieldtype": "Data",
+   "label": "Organic Certification Body"
+  },
+  {
+   "fieldname": "column_break_compliance",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_traceability",
+   "fieldtype": "Check",
+   "label": "Enable Full Traceability"
+  },
+  {
+   "depends_on": "enable_traceability",
+   "fieldname": "traceability_prefix",
+   "fieldtype": "Data",
+   "label": "Traceability Prefix",
+   "default": "TRACE"
+  },
+  {
+   "fieldname": "integrations_section",
+   "fieldtype": "Section Break",
+   "label": "Integrations"
+  },
+  {
+   "fieldname": "weather_api_provider",
+   "fieldtype": "Select",
+   "label": "Weather API Provider",
+   "options": "\nOpenWeatherMap\nWeatherAPI\nAccuWeather\nCustom"
+  },
+  {
+   "depends_on": "weather_api_provider",
+   "fieldname": "weather_api_key",
+   "fieldtype": "Password",
+   "label": "Weather API Key"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Agriculture Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Agriculture User"
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

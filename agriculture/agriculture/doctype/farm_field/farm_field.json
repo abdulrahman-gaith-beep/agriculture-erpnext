@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "field_name",
+  "field_code",
+  "location",
+  "column_break_1",
+  "area",
+  "area_uom",
+  "soil_type",
+  "column_break_2",
+  "is_irrigated",
+  "current_status",
+  "current_crop"
+ ],
+ "fields": [
+  {
+   "fieldname": "field_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Field Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "field_code",
+   "fieldtype": "Data",
+   "label": "Field Code"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Area",
+   "precision": "2"
+  },
+  {
+   "default": "Hectare",
+   "fieldname": "area_uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "soil_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Soil Type",
+   "options": "\nClay\nSandy\nLoamy\nSilty\nPeaty\nChalky\nSandy Loam\nClay Loam\nSilt Loam"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_irrigated",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Irrigated"
+  },
+  {
+   "default": "Available",
+   "fieldname": "current_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Available\nPlanted\nFallow\nUnder Preparation"
+  },
+  {
+   "fieldname": "current_crop",
+   "fieldtype": "Link",
+   "label": "Current Crop",
+   "options": "Crop"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Farm Field",
+ "owner": "Administrator",
+ "permissions": [],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

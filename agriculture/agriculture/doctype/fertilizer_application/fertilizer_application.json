@@ -1,0 +1,455 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "application_type",
+  "status",
+  "column_break_basic",
+  "application_date",
+  "application_time",
+  "applied_by",
+  "reference_section",
+  "crop_cycle",
+  "crop",
+  "farm",
+  "column_break_ref",
+  "location",
+  "field_name",
+  "growth_stage",
+  "input_details_section",
+  "fertilizer",
+  "item",
+  "batch_no",
+  "column_break_input",
+  "quantity_applied",
+  "quantity_uom",
+  "concentration",
+  "application_details_section",
+  "application_method",
+  "equipment_used",
+  "column_break_method",
+  "coverage_area",
+  "area_uom",
+  "application_rate",
+  "conditions_section",
+  "weather_condition",
+  "temperature",
+  "column_break_conditions",
+  "humidity",
+  "wind_speed",
+  "soil_moisture",
+  "compliance_section",
+  "is_organic_approved",
+  "certification_reference",
+  "column_break_compliance",
+  "withholding_period_days",
+  "safe_harvest_date",
+  "cost_section",
+  "unit_cost",
+  "total_cost",
+  "column_break_cost",
+  "labor_cost",
+  "equipment_cost",
+  "effectiveness_section",
+  "effectiveness_rating",
+  "follow_up_required",
+  "follow_up_date",
+  "column_break_effect",
+  "observations",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "FERT-APP-.YYYY.-"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "application_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Application Type",
+   "options": "Fertilizer\nPesticide\nHerbicide\nFungicide\nInsecticide\nOrganic Amendment\nBio-stimulant\nMicronutrient\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Planned",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Planned\nIn Progress\nCompleted\nPartially Applied\nCancelled"
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "application_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Application Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "application_time",
+   "fieldtype": "Time",
+   "label": "Application Time"
+  },
+  {
+   "fieldname": "applied_by",
+   "fieldtype": "Link",
+   "label": "Applied By",
+   "options": "User"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "crop_cycle",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Crop Cycle",
+   "options": "Crop Cycle"
+  },
+  {
+   "fetch_from": "crop_cycle.crop",
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crop",
+   "options": "Crop"
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm"
+  },
+  {
+   "fieldname": "column_break_ref",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "field_name",
+   "fieldtype": "Data",
+   "label": "Field/Plot Name"
+  },
+  {
+   "fieldname": "growth_stage",
+   "fieldtype": "Select",
+   "label": "Crop Growth Stage",
+   "options": "\nGermination\nSeedling\nVegetative\nFlowering\nFruit Setting\nMaturation\nHarvest Ready"
+  },
+  {
+   "fieldname": "input_details_section",
+   "fieldtype": "Section Break",
+   "label": "Input Details"
+  },
+  {
+   "fieldname": "fertilizer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Fertilizer/Input",
+   "options": "Fertilizer"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "description": "ERPNext Item for inventory tracking"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "Batch/Lot Number",
+   "description": "For traceability"
+  },
+  {
+   "fieldname": "column_break_input",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity_applied",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity Applied",
+   "precision": "3",
+   "reqd": 1
+  },
+  {
+   "default": "Kilogram",
+   "fieldname": "quantity_uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "concentration",
+   "fieldtype": "Data",
+   "label": "Concentration/Dilution",
+   "description": "e.g., 2% solution, 1:100 dilution"
+  },
+  {
+   "fieldname": "application_details_section",
+   "fieldtype": "Section Break",
+   "label": "Application Method"
+  },
+  {
+   "fieldname": "application_method",
+   "fieldtype": "Select",
+   "label": "Method",
+   "options": "\nBroadcast\nBanding\nFoliar Spray\nFertigation\nDrip Application\nSide Dressing\nTop Dressing\nSoil Injection\nSeed Treatment\nManual Spreading"
+  },
+  {
+   "fieldname": "equipment_used",
+   "fieldtype": "Data",
+   "label": "Equipment Used"
+  },
+  {
+   "fieldname": "column_break_method",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "coverage_area",
+   "fieldtype": "Float",
+   "label": "Coverage Area",
+   "precision": "2"
+  },
+  {
+   "default": "Hectare",
+   "fieldname": "area_uom",
+   "fieldtype": "Link",
+   "label": "Area UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "application_rate",
+   "fieldtype": "Data",
+   "label": "Application Rate",
+   "read_only": 1,
+   "description": "Auto-calculated: quantity per unit area"
+  },
+  {
+   "fieldname": "conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Weather/Soil Conditions"
+  },
+  {
+   "fieldname": "weather_condition",
+   "fieldtype": "Select",
+   "label": "Weather",
+   "options": "\nSunny\nCloudy\nPartly Cloudy\nOvercast\nLight Rain\nWindy\nCalm"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature (C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_conditions",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "humidity",
+   "fieldtype": "Percent",
+   "label": "Humidity %"
+  },
+  {
+   "fieldname": "wind_speed",
+   "fieldtype": "Float",
+   "label": "Wind Speed (km/h)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "soil_moisture",
+   "fieldtype": "Select",
+   "label": "Soil Moisture",
+   "options": "\nDry\nSlightly Moist\nMoist\nWet\nSaturated"
+  },
+  {
+   "fieldname": "compliance_section",
+   "fieldtype": "Section Break",
+   "label": "Compliance & Safety"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_organic_approved",
+   "fieldtype": "Check",
+   "label": "Organic Approved Input"
+  },
+  {
+   "depends_on": "is_organic_approved",
+   "fieldname": "certification_reference",
+   "fieldtype": "Data",
+   "label": "Certification Reference"
+  },
+  {
+   "fieldname": "column_break_compliance",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "withholding_period_days",
+   "fieldtype": "Int",
+   "label": "Withholding Period (Days)",
+   "description": "Days to wait before harvest"
+  },
+  {
+   "fieldname": "safe_harvest_date",
+   "fieldtype": "Date",
+   "label": "Safe Harvest Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_section",
+   "fieldtype": "Section Break",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "unit_cost",
+   "fieldtype": "Currency",
+   "label": "Unit Cost"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Input Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cost",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "labor_cost",
+   "fieldtype": "Currency",
+   "label": "Labor Cost"
+  },
+  {
+   "fieldname": "equipment_cost",
+   "fieldtype": "Currency",
+   "label": "Equipment Cost"
+  },
+  {
+   "fieldname": "effectiveness_section",
+   "fieldtype": "Section Break",
+   "label": "Effectiveness"
+  },
+  {
+   "fieldname": "effectiveness_rating",
+   "fieldtype": "Rating",
+   "label": "Effectiveness Rating"
+  },
+  {
+   "default": "0",
+   "fieldname": "follow_up_required",
+   "fieldtype": "Check",
+   "label": "Follow-up Required"
+  },
+  {
+   "depends_on": "follow_up_required",
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Follow-up Date"
+  },
+  {
+   "fieldname": "column_break_effect",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "observations",
+   "fieldtype": "Small Text",
+   "label": "Observations"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Fertilizer Application",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Fertilizer Application",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

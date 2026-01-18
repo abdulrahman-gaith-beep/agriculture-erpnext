@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "system_type",
+  "system_name",
+  "column_break_1",
+  "coverage_area",
+  "coverage_uom",
+  "water_source",
+  "column_break_2",
+  "is_automated",
+  "installation_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "system_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "System Type",
+   "options": "Drip Irrigation\nSprinkler\nFlood/Surface\nCenter Pivot\nFurrow\nMicro-sprinkler\nSubsurface Drip\nManual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "system_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "System Name"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "coverage_area",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Coverage Area",
+   "precision": "2"
+  },
+  {
+   "default": "Hectare",
+   "fieldname": "coverage_uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "water_source",
+   "fieldtype": "Data",
+   "label": "Water Source",
+   "description": "Reference to water source name"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_automated",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Automated"
+  },
+  {
+   "fieldname": "installation_date",
+   "fieldtype": "Date",
+   "label": "Installation Date"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Farm Irrigation System",
+ "owner": "Administrator",
+ "permissions": [],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

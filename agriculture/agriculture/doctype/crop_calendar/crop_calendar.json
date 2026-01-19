@@ -1,0 +1,342 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "calendar_section",
+  "naming_series",
+  "title",
+  "season",
+  "year",
+  "column_break_cal",
+  "status",
+  "farm",
+  "planning_date",
+  "planner",
+  "period_section",
+  "season_start",
+  "season_end",
+  "column_break_period",
+  "growing_degree_days",
+  "frost_free_days",
+  "climate_section",
+  "expected_rainfall",
+  "avg_temperature_min",
+  "avg_temperature_max",
+  "column_break_climate",
+  "climate_zone",
+  "irrigation_available",
+  "crops_section",
+  "planned_crops",
+  "resources_section",
+  "total_planned_area",
+  "estimated_seed_cost",
+  "estimated_fertilizer_cost",
+  "column_break_resources",
+  "estimated_labor_cost",
+  "estimated_equipment_cost",
+  "total_estimated_cost",
+  "revenue_section",
+  "estimated_total_yield",
+  "estimated_revenue",
+  "column_break_revenue",
+  "estimated_profit",
+  "roi_percentage",
+  "notes_section",
+  "assumptions",
+  "risks",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "calendar_section",
+   "fieldtype": "Section Break",
+   "label": "Calendar Information"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CAL-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "season",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Season",
+   "options": "\nSpring\nSummer\nFall/Autumn\nWinter\nWet Season\nDry Season\nYear-Round",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nPlanning\nApproved\nIn Progress\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "planning_date",
+   "fieldtype": "Date",
+   "label": "Planning Date"
+  },
+  {
+   "fieldname": "planner",
+   "fieldtype": "Link",
+   "label": "Planned By",
+   "options": "User"
+  },
+  {
+   "fieldname": "period_section",
+   "fieldtype": "Section Break",
+   "label": "Growing Period"
+  },
+  {
+   "fieldname": "season_start",
+   "fieldtype": "Date",
+   "label": "Season Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "season_end",
+   "fieldtype": "Date",
+   "label": "Season End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_period",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "growing_degree_days",
+   "fieldtype": "Int",
+   "label": "Expected Growing Degree Days"
+  },
+  {
+   "fieldname": "frost_free_days",
+   "fieldtype": "Int",
+   "label": "Frost-Free Days"
+  },
+  {
+   "fieldname": "climate_section",
+   "fieldtype": "Section Break",
+   "label": "Expected Climate",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "expected_rainfall",
+   "fieldtype": "Float",
+   "label": "Expected Rainfall (mm)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "avg_temperature_min",
+   "fieldtype": "Float",
+   "label": "Avg Min Temperature (°C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "avg_temperature_max",
+   "fieldtype": "Float",
+   "label": "Avg Max Temperature (°C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_climate",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "climate_zone",
+   "fieldtype": "Select",
+   "label": "Climate Zone",
+   "options": "\nTropical\nSubtropical\nTemperate\nArid/Semi-Arid\nMediterranean"
+  },
+  {
+   "default": "1",
+   "fieldname": "irrigation_available",
+   "fieldtype": "Check",
+   "label": "Irrigation Available"
+  },
+  {
+   "fieldname": "crops_section",
+   "fieldtype": "Section Break",
+   "label": "Planned Crops"
+  },
+  {
+   "fieldname": "planned_crops",
+   "fieldtype": "Table",
+   "label": "Planned Crops",
+   "options": "Crop Calendar Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "resources_section",
+   "fieldtype": "Section Break",
+   "label": "Resource Estimates"
+  },
+  {
+   "fieldname": "total_planned_area",
+   "fieldtype": "Float",
+   "label": "Total Planned Area (Ha)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "estimated_seed_cost",
+   "fieldtype": "Currency",
+   "label": "Estimated Seed Cost"
+  },
+  {
+   "fieldname": "estimated_fertilizer_cost",
+   "fieldtype": "Currency",
+   "label": "Estimated Fertilizer Cost"
+  },
+  {
+   "fieldname": "column_break_resources",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimated_labor_cost",
+   "fieldtype": "Currency",
+   "label": "Estimated Labor Cost"
+  },
+  {
+   "fieldname": "estimated_equipment_cost",
+   "fieldtype": "Currency",
+   "label": "Estimated Equipment Cost"
+  },
+  {
+   "fieldname": "total_estimated_cost",
+   "fieldtype": "Currency",
+   "label": "Total Estimated Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "revenue_section",
+   "fieldtype": "Section Break",
+   "label": "Revenue Projections"
+  },
+  {
+   "fieldname": "estimated_total_yield",
+   "fieldtype": "Float",
+   "label": "Estimated Total Yield (kg)",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "estimated_revenue",
+   "fieldtype": "Currency",
+   "label": "Estimated Revenue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_revenue",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimated_profit",
+   "fieldtype": "Currency",
+   "label": "Estimated Profit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "roi_percentage",
+   "fieldtype": "Percent",
+   "label": "Estimated ROI %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Planning Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "assumptions",
+   "fieldtype": "Small Text",
+   "label": "Assumptions"
+  },
+  {
+   "fieldname": "risks",
+   "fieldtype": "Small Text",
+   "label": "Identified Risks"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Additional Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Crop Calendar",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

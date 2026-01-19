@@ -1,0 +1,499 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "application_section",
+  "naming_series",
+  "application_date",
+  "application_time",
+  "applicator",
+  "column_break_app",
+  "crop_cycle",
+  "farm",
+  "crop",
+  "location",
+  "target_section",
+  "target_type",
+  "target_pest",
+  "target_disease",
+  "column_break_target",
+  "pest_pressure",
+  "infestation_level",
+  "product_section",
+  "pesticide_type",
+  "product_name",
+  "active_ingredient",
+  "column_break_product",
+  "concentration",
+  "formulation_type",
+  "registration_number",
+  "application_details_section",
+  "application_method",
+  "equipment_used",
+  "column_break_details",
+  "application_rate",
+  "application_rate_uom",
+  "area_treated",
+  "area_uom",
+  "quantities_section",
+  "product_quantity_used",
+  "product_uom",
+  "water_volume",
+  "column_break_qty",
+  "total_mixture_volume",
+  "cost_per_unit",
+  "total_cost",
+  "weather_section",
+  "temperature",
+  "humidity",
+  "wind_speed",
+  "column_break_weather",
+  "weather_conditions",
+  "weather_suitable",
+  "safety_section",
+  "ppe_used",
+  "re_entry_interval_hours",
+  "re_entry_date",
+  "column_break_safety",
+  "pre_harvest_interval_days",
+  "safe_harvest_date",
+  "restricted_entry_posted",
+  "effectiveness_section",
+  "effectiveness_rating",
+  "follow_up_required",
+  "follow_up_date",
+  "column_break_effect",
+  "observations",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "application_section",
+   "fieldtype": "Section Break",
+   "label": "Application Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PEST-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "application_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Application Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "application_time",
+   "fieldtype": "Time",
+   "label": "Application Time"
+  },
+  {
+   "fieldname": "applicator",
+   "fieldtype": "Data",
+   "label": "Applicator/Operator"
+  },
+  {
+   "fieldname": "column_break_app",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crop_cycle",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Crop Cycle",
+   "options": "Crop Cycle"
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm"
+  },
+  {
+   "fetch_from": "crop_cycle.crop",
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "label": "Crop",
+   "options": "Crop",
+   "read_only_depends_on": "crop_cycle"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Field/Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "target_section",
+   "fieldtype": "Section Break",
+   "label": "Target Pest/Disease"
+  },
+  {
+   "fieldname": "target_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Target Type",
+   "options": "\nPest\nDisease\nWeed\nPest and Disease\nPreventive",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.target_type=='Pest' || doc.target_type=='Pest and Disease'",
+   "fieldname": "target_pest",
+   "fieldtype": "Link",
+   "label": "Target Pest",
+   "options": "Pest"
+  },
+  {
+   "depends_on": "eval:doc.target_type=='Disease' || doc.target_type=='Pest and Disease'",
+   "fieldname": "target_disease",
+   "fieldtype": "Link",
+   "label": "Target Disease",
+   "options": "Disease"
+  },
+  {
+   "fieldname": "column_break_target",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pest_pressure",
+   "fieldtype": "Select",
+   "label": "Pest/Disease Pressure",
+   "options": "\nLow\nModerate\nHigh\nSevere"
+  },
+  {
+   "fieldname": "infestation_level",
+   "fieldtype": "Percent",
+   "label": "Infestation Level %"
+  },
+  {
+   "fieldname": "product_section",
+   "fieldtype": "Section Break",
+   "label": "Product Information"
+  },
+  {
+   "fieldname": "pesticide_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Pesticide Type",
+   "options": "\nInsecticide\nFungicide\nHerbicide\nAcaricide\nNematicide\nRodenticide\nBio-pesticide\nOrganic\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product/Trade Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "active_ingredient",
+   "fieldtype": "Data",
+   "label": "Active Ingredient"
+  },
+  {
+   "fieldname": "column_break_product",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "concentration",
+   "fieldtype": "Data",
+   "label": "Concentration",
+   "description": "e.g., 250 g/L, 50% WP"
+  },
+  {
+   "fieldname": "formulation_type",
+   "fieldtype": "Select",
+   "label": "Formulation Type",
+   "options": "\nEC (Emulsifiable Concentrate)\nWP (Wettable Powder)\nSC (Suspension Concentrate)\nWG (Water Dispersible Granule)\nSL (Soluble Liquid)\nGR (Granule)\nDP (Dustable Powder)\nOther"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration/EPA Number"
+  },
+  {
+   "fieldname": "application_details_section",
+   "fieldtype": "Section Break",
+   "label": "Application Method"
+  },
+  {
+   "fieldname": "application_method",
+   "fieldtype": "Select",
+   "label": "Application Method",
+   "options": "\nFoliar Spray\nSoil Drench\nSeed Treatment\nFumigation\nBait Station\nGranular Broadcast\nSpot Treatment\nAerial Application\nInjection\nOther"
+  },
+  {
+   "fieldname": "equipment_used",
+   "fieldtype": "Link",
+   "label": "Equipment Used",
+   "options": "Farm Equipment"
+  },
+  {
+   "fieldname": "column_break_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "application_rate",
+   "fieldtype": "Float",
+   "label": "Application Rate",
+   "precision": "3"
+  },
+  {
+   "default": "L/ha",
+   "fieldname": "application_rate_uom",
+   "fieldtype": "Data",
+   "label": "Rate UOM",
+   "description": "e.g., L/ha, kg/ha, ml/L"
+  },
+  {
+   "fieldname": "area_treated",
+   "fieldtype": "Float",
+   "label": "Area Treated",
+   "precision": "2"
+  },
+  {
+   "default": "Hectare",
+   "fieldname": "area_uom",
+   "fieldtype": "Link",
+   "label": "Area UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "quantities_section",
+   "fieldtype": "Section Break",
+   "label": "Quantities & Cost"
+  },
+  {
+   "fieldname": "product_quantity_used",
+   "fieldtype": "Float",
+   "label": "Product Quantity Used",
+   "precision": "3",
+   "reqd": 1
+  },
+  {
+   "default": "Litre",
+   "fieldname": "product_uom",
+   "fieldtype": "Link",
+   "label": "Product UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "water_volume",
+   "fieldtype": "Float",
+   "label": "Water Volume (L)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_qty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_mixture_volume",
+   "fieldtype": "Float",
+   "label": "Total Mixture Volume (L)",
+   "precision": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_unit",
+   "fieldtype": "Currency",
+   "label": "Cost per Unit"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weather_section",
+   "fieldtype": "Section Break",
+   "label": "Weather Conditions",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature (°C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "humidity",
+   "fieldtype": "Percent",
+   "label": "Humidity %"
+  },
+  {
+   "fieldname": "wind_speed",
+   "fieldtype": "Float",
+   "label": "Wind Speed (km/h)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_weather",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weather_conditions",
+   "fieldtype": "Select",
+   "label": "Weather Conditions",
+   "options": "\nClear\nPartly Cloudy\nOvercast\nLight Rain\nAfter Rain"
+  },
+  {
+   "default": "1",
+   "fieldname": "weather_suitable",
+   "fieldtype": "Check",
+   "label": "Weather Suitable for Application"
+  },
+  {
+   "fieldname": "safety_section",
+   "fieldtype": "Section Break",
+   "label": "Safety & Compliance"
+  },
+  {
+   "fieldname": "ppe_used",
+   "fieldtype": "Data",
+   "label": "PPE Used",
+   "description": "e.g., Gloves, Mask, Goggles, Coverall"
+  },
+  {
+   "fieldname": "re_entry_interval_hours",
+   "fieldtype": "Int",
+   "label": "Re-Entry Interval (Hours)"
+  },
+  {
+   "fieldname": "re_entry_date",
+   "fieldtype": "Datetime",
+   "label": "Safe Re-Entry Date/Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_safety",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pre_harvest_interval_days",
+   "fieldtype": "Int",
+   "label": "Pre-Harvest Interval (Days)"
+  },
+  {
+   "fieldname": "safe_harvest_date",
+   "fieldtype": "Date",
+   "label": "Safe Harvest Date",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "restricted_entry_posted",
+   "fieldtype": "Check",
+   "label": "Restricted Entry Signs Posted"
+  },
+  {
+   "fieldname": "effectiveness_section",
+   "fieldtype": "Section Break",
+   "label": "Effectiveness Assessment",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "effectiveness_rating",
+   "fieldtype": "Select",
+   "label": "Effectiveness Rating",
+   "options": "\nNot Yet Assessed\nHighly Effective\nEffective\nPartially Effective\nNot Effective"
+  },
+  {
+   "default": "0",
+   "fieldname": "follow_up_required",
+   "fieldtype": "Check",
+   "label": "Follow-up Application Required"
+  },
+  {
+   "depends_on": "follow_up_required",
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Follow-up Date"
+  },
+  {
+   "fieldname": "column_break_effect",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "observations",
+   "fieldtype": "Small Text",
+   "label": "Post-Application Observations"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pesticide Application",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Pesticide Application",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

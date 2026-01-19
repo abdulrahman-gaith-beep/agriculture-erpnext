@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "crop",
+  "variety",
+  "planned_area",
+  "priority",
+  "column_break_item",
+  "planned_start_date",
+  "planned_end_date",
+  "planting_method",
+  "section_break_yield",
+  "expected_yield",
+  "yield_uom",
+  "expected_price_per_unit",
+  "column_break_yield",
+  "expected_revenue",
+  "crop_cycle",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crop",
+   "options": "Crop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "variety",
+   "fieldtype": "Data",
+   "label": "Variety"
+  },
+  {
+   "fieldname": "planned_area",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Planned Area (Ha)",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "High\nMedium\nLow"
+  },
+  {
+   "fieldname": "column_break_item",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "planned_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Planned Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "planned_end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Planned End Date"
+  },
+  {
+   "fieldname": "planting_method",
+   "fieldtype": "Select",
+   "label": "Planting Method",
+   "options": "\nDirect Seeding\nTransplanting\nCuttings\nBulbs/Tubers"
+  },
+  {
+   "fieldname": "section_break_yield",
+   "fieldtype": "Section Break",
+   "label": "Yield & Revenue"
+  },
+  {
+   "fieldname": "expected_yield",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Expected Yield",
+   "precision": "2"
+  },
+  {
+   "default": "Kilogram",
+   "fieldname": "yield_uom",
+   "fieldtype": "Link",
+   "label": "Yield UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "expected_price_per_unit",
+   "fieldtype": "Currency",
+   "label": "Expected Price per Unit"
+  },
+  {
+   "fieldname": "column_break_yield",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_revenue",
+   "fieldtype": "Currency",
+   "label": "Expected Revenue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "crop_cycle",
+   "fieldtype": "Link",
+   "label": "Created Crop Cycle",
+   "options": "Crop Cycle",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Crop Calendar Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

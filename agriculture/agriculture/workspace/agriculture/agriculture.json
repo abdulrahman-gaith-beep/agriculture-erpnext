@@ -9,7 +9,7 @@
    "label": "Monthly Harvests"
   }
  ],
- "content": "[{\"type\": \"onboarding\", \"data\": {\"onboarding_name\": \"Agriculture\", \"col\": 12}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Crop Cycles by Status\", \"col\": 6}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Monthly Harvests\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Quick Access\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Active Crop Cycles\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Farms\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Recent Harvests\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Pending Inspections\", \"col\": 3}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Reports & Masters\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Farms & Land\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Crop Management\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Analytics & Reports\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Inputs & Pests\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 4}}]",
+ "content": "[{\"type\": \"onboarding\", \"data\": {\"onboarding_name\": \"Agriculture\", \"col\": 12}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Crop Cycles by Status\", \"col\": 6}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Monthly Harvests\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Quick Access\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Active Crop Cycles\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Farms\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Recent Harvests\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Pending Inspections\", \"col\": 3}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Reports & Masters\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Farms & Land\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Crop Management\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Analytics & Reports\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Inputs & Pests\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Resources\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 4}}]",
  "creation": "2020-03-02 17:23:34.339274",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -83,6 +83,17 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Crop Calendar",
+   "link_count": 0,
+   "link_to": "Crop Calendar",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Crop Inspection",
    "link_count": 0,
    "link_to": "Crop Inspection",
@@ -124,9 +135,31 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Pesticide Application",
+   "link_count": 0,
+   "link_to": "Pesticide Application",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Irrigation Schedule",
    "link_count": 0,
    "link_to": "Irrigation Schedule",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Labor Activity",
+   "link_count": 0,
+   "link_to": "Labor Activity",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -266,6 +299,25 @@
    "link_to": "Agriculture Analysis Criteria",
    "link_type": "DocType",
    "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Resources",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Farm Equipment",
+   "link_count": 0,
+   "link_to": "Farm Equipment",
+   "link_type": "DocType",
+   "onboard": 1,
    "type": "Link"
   },
   {

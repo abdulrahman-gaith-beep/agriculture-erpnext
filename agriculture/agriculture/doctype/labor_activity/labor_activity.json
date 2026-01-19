@@ -1,0 +1,381 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "activity_section",
+  "naming_series",
+  "activity_date",
+  "activity_type",
+  "description",
+  "column_break_activity",
+  "status",
+  "priority",
+  "supervisor",
+  "assignment_section",
+  "farm",
+  "crop_cycle",
+  "location",
+  "column_break_assign",
+  "crop",
+  "equipment_used",
+  "workers_section",
+  "workers",
+  "total_workers",
+  "time_section",
+  "start_time",
+  "end_time",
+  "total_hours",
+  "column_break_time",
+  "break_duration_minutes",
+  "actual_working_hours",
+  "overtime_hours",
+  "cost_section",
+  "hourly_rate",
+  "overtime_rate",
+  "regular_cost",
+  "column_break_cost",
+  "overtime_cost",
+  "other_costs",
+  "total_cost",
+  "output_section",
+  "area_covered",
+  "area_uom",
+  "quantity_produced",
+  "column_break_output",
+  "quantity_uom",
+  "quality_rating",
+  "completion_percentage",
+  "notes_section",
+  "work_notes",
+  "issues_encountered",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "activity_section",
+   "fieldtype": "Section Break",
+   "label": "Activity Information"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "LAB-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "activity_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Activity Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "activity_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Activity Type",
+   "options": "\nLand Preparation\nPlanting/Sowing\nTransplanting\nWeeding\nFertilizing\nIrrigation\nPest Control\nHarvesting\nPost-Harvest\nMaintenance\nTransport\nGeneral Labor\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Activity Description"
+  },
+  {
+   "fieldname": "column_break_activity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Completed",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Planned\nIn Progress\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Data",
+   "label": "Supervisor"
+  },
+  {
+   "fieldname": "assignment_section",
+   "fieldtype": "Section Break",
+   "label": "Assignment"
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm"
+  },
+  {
+   "fieldname": "crop_cycle",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Crop Cycle",
+   "options": "Crop Cycle"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location/Field",
+   "options": "Location"
+  },
+  {
+   "fieldname": "column_break_assign",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "crop_cycle.crop",
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "label": "Crop",
+   "options": "Crop",
+   "read_only_depends_on": "crop_cycle"
+  },
+  {
+   "fieldname": "equipment_used",
+   "fieldtype": "Link",
+   "label": "Equipment Used",
+   "options": "Farm Equipment"
+  },
+  {
+   "fieldname": "workers_section",
+   "fieldtype": "Section Break",
+   "label": "Workers"
+  },
+  {
+   "fieldname": "workers",
+   "fieldtype": "Table",
+   "label": "Workers",
+   "options": "Labor Activity Worker"
+  },
+  {
+   "fieldname": "total_workers",
+   "fieldtype": "Int",
+   "label": "Total Workers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "time_section",
+   "fieldtype": "Section Break",
+   "label": "Time Tracking"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_time",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "break_duration_minutes",
+   "fieldtype": "Int",
+   "label": "Break Duration (Minutes)"
+  },
+  {
+   "fieldname": "actual_working_hours",
+   "fieldtype": "Float",
+   "label": "Actual Working Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "Overtime Hours",
+   "precision": "2"
+  },
+  {
+   "fieldname": "cost_section",
+   "fieldtype": "Section Break",
+   "label": "Cost Calculation"
+  },
+  {
+   "fieldname": "hourly_rate",
+   "fieldtype": "Currency",
+   "label": "Hourly Rate (per worker)"
+  },
+  {
+   "fieldname": "overtime_rate",
+   "fieldtype": "Currency",
+   "label": "Overtime Rate (per worker)"
+  },
+  {
+   "fieldname": "regular_cost",
+   "fieldtype": "Currency",
+   "label": "Regular Labor Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cost",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overtime_cost",
+   "fieldtype": "Currency",
+   "label": "Overtime Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_costs",
+   "fieldtype": "Currency",
+   "label": "Other Costs"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "output_section",
+   "fieldtype": "Section Break",
+   "label": "Work Output",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "area_covered",
+   "fieldtype": "Float",
+   "label": "Area Covered",
+   "precision": "2"
+  },
+  {
+   "default": "Hectare",
+   "fieldname": "area_uom",
+   "fieldtype": "Link",
+   "label": "Area UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "quantity_produced",
+   "fieldtype": "Float",
+   "label": "Quantity Produced/Processed",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_output",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Kilogram",
+   "fieldname": "quantity_uom",
+   "fieldtype": "Link",
+   "label": "Quantity UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "quality_rating",
+   "fieldtype": "Select",
+   "label": "Work Quality Rating",
+   "options": "\nExcellent\nGood\nSatisfactory\nNeeds Improvement\nPoor"
+  },
+  {
+   "fieldname": "completion_percentage",
+   "fieldtype": "Percent",
+   "label": "Task Completion %"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "work_notes",
+   "fieldtype": "Text Editor",
+   "label": "Work Notes"
+  },
+  {
+   "fieldname": "issues_encountered",
+   "fieldtype": "Small Text",
+   "label": "Issues Encountered"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Labor Activity",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Labor Activity",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

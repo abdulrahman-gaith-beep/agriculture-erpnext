@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "log_type",
+  "maintenance_type",
+  "log_date",
+  "hours_at_log",
+  "column_break_log",
+  "fuel_used",
+  "cost",
+  "performed_by",
+  "section_break_notes",
+  "description",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "log_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Log Type",
+   "options": "Usage\nMaintenance\nRepair\nInspection\nStatus Change",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.log_type=='Maintenance' || doc.log_type=='Repair'",
+   "fieldname": "maintenance_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Maintenance Type",
+   "options": "\nOil Change\nFilter Replacement\nBelt Replacement\nBrake Service\nTire Service\nElectrical\nHydraulic\nEngine Service\nGeneral Service\nRepair\nOther"
+  },
+  {
+   "default": "Today",
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hours_at_log",
+   "fieldtype": "Float",
+   "label": "Hours at Log",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_log",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fuel_used",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Fuel Used (Liters)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Cost"
+  },
+  {
+   "fieldname": "performed_by",
+   "fieldtype": "Data",
+   "label": "Performed By"
+  },
+  {
+   "fieldname": "section_break_notes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Equipment Maintenance Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_date",
+  "event_time",
+  "scheduled_volume",
+  "actual_volume",
+  "duration_minutes",
+  "was_skipped",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Time"
+  },
+  {
+   "fieldname": "scheduled_volume",
+   "fieldtype": "Float",
+   "label": "Scheduled Volume",
+   "precision": "2"
+  },
+  {
+   "fieldname": "actual_volume",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Actual Volume",
+   "precision": "2"
+  },
+  {
+   "fieldname": "duration_minutes",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Duration (min)"
+  },
+  {
+   "default": "0",
+   "fieldname": "was_skipped",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Skipped"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Irrigation Event",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

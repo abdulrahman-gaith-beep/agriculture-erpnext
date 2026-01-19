@@ -1,0 +1,460 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "inspection_type",
+  "status",
+  "column_break_basic",
+  "inspection_date",
+  "inspected_by",
+  "reference_section",
+  "crop_cycle",
+  "crop",
+  "farm",
+  "column_break_ref",
+  "location",
+  "field_name",
+  "growth_stage",
+  "weather_section",
+  "weather_condition",
+  "temperature",
+  "column_break_weather",
+  "humidity",
+  "recent_rainfall",
+  "crop_health_section",
+  "overall_health_rating",
+  "plant_height",
+  "height_uom",
+  "column_break_health",
+  "canopy_cover",
+  "leaf_color",
+  "vigor_rating",
+  "pest_disease_section",
+  "pests_observed",
+  "diseases_observed",
+  "pest_severity",
+  "disease_severity",
+  "column_break_pest",
+  "affected_area_percent",
+  "immediate_action_required",
+  "soil_section",
+  "soil_moisture",
+  "soil_compaction",
+  "column_break_soil",
+  "weed_pressure",
+  "erosion_signs",
+  "irrigation_section",
+  "irrigation_status",
+  "water_stress_signs",
+  "column_break_irrigation",
+  "drainage_issues",
+  "recommendations_section",
+  "findings",
+  "recommendations",
+  "priority_actions",
+  "follow_up_section",
+  "follow_up_required",
+  "follow_up_date",
+  "column_break_followup",
+  "follow_up_assigned_to",
+  "attachments_section",
+  "photos",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "INSP-.YYYY.-"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  },
+  {
+   "default": "Routine",
+   "fieldname": "inspection_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inspection Type",
+   "options": "Routine\nPest Scouting\nDisease Check\nPre-Harvest\nPost-Planting\nEmergency\nQuality Assessment",
+   "reqd": 1
+  },
+  {
+   "default": "Completed",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nIn Progress\nCompleted\nAction Required"
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "inspection_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inspection Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inspected_by",
+   "fieldtype": "Link",
+   "label": "Inspected By",
+   "options": "User"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "crop_cycle",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Crop Cycle",
+   "options": "Crop Cycle"
+  },
+  {
+   "fetch_from": "crop_cycle.crop",
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crop",
+   "options": "Crop"
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm"
+  },
+  {
+   "fieldname": "column_break_ref",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "field_name",
+   "fieldtype": "Data",
+   "label": "Field/Plot"
+  },
+  {
+   "fieldname": "growth_stage",
+   "fieldtype": "Select",
+   "label": "Growth Stage",
+   "options": "\nGermination\nSeedling\nVegetative\nFlowering\nFruit Setting\nMaturation\nHarvest Ready"
+  },
+  {
+   "fieldname": "weather_section",
+   "fieldtype": "Section Break",
+   "label": "Weather Conditions"
+  },
+  {
+   "fieldname": "weather_condition",
+   "fieldtype": "Select",
+   "label": "Weather",
+   "options": "\nSunny\nPartly Cloudy\nCloudy\nOvercast\nLight Rain\nHeavy Rain\nWindy"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Float",
+   "label": "Temperature (C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_weather",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "humidity",
+   "fieldtype": "Percent",
+   "label": "Humidity %"
+  },
+  {
+   "fieldname": "recent_rainfall",
+   "fieldtype": "Float",
+   "label": "Recent Rainfall (mm)",
+   "precision": "1",
+   "description": "Rainfall in last 24-48 hours"
+  },
+  {
+   "fieldname": "crop_health_section",
+   "fieldtype": "Section Break",
+   "label": "Crop Health"
+  },
+  {
+   "fieldname": "overall_health_rating",
+   "fieldtype": "Rating",
+   "label": "Overall Health Rating"
+  },
+  {
+   "fieldname": "plant_height",
+   "fieldtype": "Float",
+   "label": "Average Plant Height",
+   "precision": "1"
+  },
+  {
+   "default": "Centimeter",
+   "fieldname": "height_uom",
+   "fieldtype": "Link",
+   "label": "Height UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_health",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "canopy_cover",
+   "fieldtype": "Percent",
+   "label": "Canopy Cover %"
+  },
+  {
+   "fieldname": "leaf_color",
+   "fieldtype": "Select",
+   "label": "Leaf Color",
+   "options": "\nDark Green\nLight Green\nYellowing\nBrowning\nPurple/Red\nMottled"
+  },
+  {
+   "fieldname": "vigor_rating",
+   "fieldtype": "Select",
+   "label": "Vigor",
+   "options": "\nExcellent\nGood\nFair\nPoor\nCritical"
+  },
+  {
+   "fieldname": "pest_disease_section",
+   "fieldtype": "Section Break",
+   "label": "Pest & Disease Observations"
+  },
+  {
+   "fieldname": "pests_observed",
+   "fieldtype": "Table MultiSelect",
+   "label": "Pests Observed",
+   "options": "Inspection Pest"
+  },
+  {
+   "fieldname": "diseases_observed",
+   "fieldtype": "Table MultiSelect",
+   "label": "Diseases Observed",
+   "options": "Inspection Disease"
+  },
+  {
+   "default": "None",
+   "fieldname": "pest_severity",
+   "fieldtype": "Select",
+   "label": "Pest Severity",
+   "options": "None\nLow\nModerate\nHigh\nSevere"
+  },
+  {
+   "default": "None",
+   "fieldname": "disease_severity",
+   "fieldtype": "Select",
+   "label": "Disease Severity",
+   "options": "None\nLow\nModerate\nHigh\nSevere"
+  },
+  {
+   "fieldname": "column_break_pest",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "affected_area_percent",
+   "fieldtype": "Percent",
+   "label": "Affected Area %"
+  },
+  {
+   "default": "0",
+   "fieldname": "immediate_action_required",
+   "fieldtype": "Check",
+   "label": "Immediate Action Required"
+  },
+  {
+   "fieldname": "soil_section",
+   "fieldtype": "Section Break",
+   "label": "Soil Conditions"
+  },
+  {
+   "fieldname": "soil_moisture",
+   "fieldtype": "Select",
+   "label": "Soil Moisture",
+   "options": "\nDry\nSlightly Moist\nMoist\nWet\nSaturated"
+  },
+  {
+   "fieldname": "soil_compaction",
+   "fieldtype": "Select",
+   "label": "Soil Compaction",
+   "options": "\nNone\nLight\nModerate\nSevere"
+  },
+  {
+   "fieldname": "column_break_soil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weed_pressure",
+   "fieldtype": "Select",
+   "label": "Weed Pressure",
+   "options": "\nNone\nLow\nModerate\nHigh\nSevere"
+  },
+  {
+   "default": "0",
+   "fieldname": "erosion_signs",
+   "fieldtype": "Check",
+   "label": "Erosion Signs Observed"
+  },
+  {
+   "fieldname": "irrigation_section",
+   "fieldtype": "Section Break",
+   "label": "Irrigation & Drainage"
+  },
+  {
+   "fieldname": "irrigation_status",
+   "fieldtype": "Select",
+   "label": "Irrigation Status",
+   "options": "\nAdequate\nNeeds Irrigation\nOver-irrigated\nSystem Issues"
+  },
+  {
+   "default": "0",
+   "fieldname": "water_stress_signs",
+   "fieldtype": "Check",
+   "label": "Water Stress Signs"
+  },
+  {
+   "fieldname": "column_break_irrigation",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "drainage_issues",
+   "fieldtype": "Check",
+   "label": "Drainage Issues"
+  },
+  {
+   "fieldname": "recommendations_section",
+   "fieldtype": "Section Break",
+   "label": "Findings & Recommendations"
+  },
+  {
+   "fieldname": "findings",
+   "fieldtype": "Text Editor",
+   "label": "Key Findings"
+  },
+  {
+   "fieldname": "recommendations",
+   "fieldtype": "Text Editor",
+   "label": "Recommendations"
+  },
+  {
+   "fieldname": "priority_actions",
+   "fieldtype": "Table",
+   "label": "Priority Actions",
+   "options": "Inspection Action"
+  },
+  {
+   "fieldname": "follow_up_section",
+   "fieldtype": "Section Break",
+   "label": "Follow-up"
+  },
+  {
+   "default": "0",
+   "fieldname": "follow_up_required",
+   "fieldtype": "Check",
+   "label": "Follow-up Required"
+  },
+  {
+   "depends_on": "follow_up_required",
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Follow-up Date"
+  },
+  {
+   "fieldname": "column_break_followup",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "follow_up_required",
+   "fieldname": "follow_up_assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "User"
+  },
+  {
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "photos",
+   "fieldtype": "Attach",
+   "label": "Photos"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Crop Inspection",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Crop Inspection",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,444 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "status",
+  "column_break_basic",
+  "schedule_type",
+  "priority",
+  "reference_section",
+  "crop_cycle",
+  "crop",
+  "farm",
+  "column_break_ref",
+  "location",
+  "field_name",
+  "irrigation_system",
+  "schedule_section",
+  "start_date",
+  "end_date",
+  "frequency",
+  "column_break_schedule",
+  "preferred_time",
+  "duration_minutes",
+  "next_irrigation_date",
+  "water_requirements_section",
+  "water_source",
+  "water_volume_per_event",
+  "volume_uom",
+  "column_break_water",
+  "flow_rate",
+  "flow_rate_uom",
+  "total_water_used",
+  "automation_section",
+  "is_automated",
+  "sensor_based",
+  "column_break_auto",
+  "soil_moisture_threshold",
+  "weather_adjusted",
+  "conditions_section",
+  "min_temperature",
+  "max_temperature",
+  "column_break_conditions",
+  "skip_if_rain_forecast",
+  "rain_threshold_mm",
+  "execution_log_section",
+  "irrigation_events",
+  "last_irrigated",
+  "column_break_log",
+  "events_completed",
+  "events_skipped",
+  "cost_section",
+  "water_cost_per_unit",
+  "energy_cost_per_event",
+  "column_break_cost",
+  "total_cost",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "IRR-.YYYY.-"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nActive\nPaused\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Scheduled",
+   "fieldname": "schedule_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Schedule Type",
+   "options": "Scheduled\nSensor-Based\nManual\nWeather-Responsive",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "reference_section",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "crop_cycle",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Crop Cycle",
+   "options": "Crop Cycle"
+  },
+  {
+   "fetch_from": "crop_cycle.crop",
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crop",
+   "options": "Crop"
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm"
+  },
+  {
+   "fieldname": "column_break_ref",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "field_name",
+   "fieldtype": "Data",
+   "label": "Field/Zone"
+  },
+  {
+   "fieldname": "irrigation_system",
+   "fieldtype": "Select",
+   "label": "Irrigation System",
+   "options": "\nDrip\nSprinkler\nCenter Pivot\nFlood\nFurrow\nSurface\nSubsurface\nMicro-Sprinkler"
+  },
+  {
+   "fieldname": "schedule_section",
+   "fieldtype": "Section Break",
+   "label": "Schedule"
+  },
+  {
+   "default": "Today",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "default": "Daily",
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "Daily\nEvery 2 Days\nEvery 3 Days\nTwice Weekly\nWeekly\nBi-Weekly\nAs Needed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_schedule",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "06:00",
+   "fieldname": "preferred_time",
+   "fieldtype": "Time",
+   "label": "Preferred Time"
+  },
+  {
+   "default": "30",
+   "fieldname": "duration_minutes",
+   "fieldtype": "Int",
+   "label": "Duration (minutes)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_irrigation_date",
+   "fieldtype": "Date",
+   "label": "Next Irrigation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "water_requirements_section",
+   "fieldtype": "Section Break",
+   "label": "Water Requirements"
+  },
+  {
+   "fieldname": "water_source",
+   "fieldtype": "Select",
+   "label": "Water Source",
+   "options": "\nWell\nBorehole\nRiver\nReservoir\nMunicipal\nRainwater Harvesting\nRecycled Water"
+  },
+  {
+   "fieldname": "water_volume_per_event",
+   "fieldtype": "Float",
+   "label": "Water Volume per Event",
+   "precision": "2"
+  },
+  {
+   "default": "Litre",
+   "fieldname": "volume_uom",
+   "fieldtype": "Link",
+   "label": "Volume UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_water",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flow_rate",
+   "fieldtype": "Float",
+   "label": "Flow Rate",
+   "precision": "2"
+  },
+  {
+   "fieldname": "flow_rate_uom",
+   "fieldtype": "Data",
+   "label": "Flow Rate UOM",
+   "default": "L/min"
+  },
+  {
+   "fieldname": "total_water_used",
+   "fieldtype": "Float",
+   "label": "Total Water Used",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "automation_section",
+   "fieldtype": "Section Break",
+   "label": "Automation"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_automated",
+   "fieldtype": "Check",
+   "label": "Automated Irrigation"
+  },
+  {
+   "default": "0",
+   "depends_on": "is_automated",
+   "fieldname": "sensor_based",
+   "fieldtype": "Check",
+   "label": "Sensor-Based Control"
+  },
+  {
+   "fieldname": "column_break_auto",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "sensor_based",
+   "fieldname": "soil_moisture_threshold",
+   "fieldtype": "Percent",
+   "label": "Soil Moisture Threshold %",
+   "description": "Irrigate when moisture falls below this level"
+  },
+  {
+   "default": "0",
+   "fieldname": "weather_adjusted",
+   "fieldtype": "Check",
+   "label": "Adjust Based on Weather"
+  },
+  {
+   "fieldname": "conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Operating Conditions"
+  },
+  {
+   "fieldname": "min_temperature",
+   "fieldtype": "Float",
+   "label": "Min Temperature (C)",
+   "precision": "1",
+   "description": "Skip if below this temperature"
+  },
+  {
+   "fieldname": "max_temperature",
+   "fieldtype": "Float",
+   "label": "Max Temperature (C)",
+   "precision": "1",
+   "description": "Skip if above this temperature"
+  },
+  {
+   "fieldname": "column_break_conditions",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "skip_if_rain_forecast",
+   "fieldtype": "Check",
+   "label": "Skip if Rain Forecasted"
+  },
+  {
+   "depends_on": "skip_if_rain_forecast",
+   "fieldname": "rain_threshold_mm",
+   "fieldtype": "Float",
+   "label": "Rain Threshold (mm)",
+   "default": "5",
+   "description": "Skip if forecast exceeds this"
+  },
+  {
+   "fieldname": "execution_log_section",
+   "fieldtype": "Section Break",
+   "label": "Execution Log"
+  },
+  {
+   "fieldname": "irrigation_events",
+   "fieldtype": "Table",
+   "label": "Irrigation Events",
+   "options": "Irrigation Event"
+  },
+  {
+   "fieldname": "last_irrigated",
+   "fieldtype": "Datetime",
+   "label": "Last Irrigated",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_log",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "events_completed",
+   "fieldtype": "Int",
+   "label": "Events Completed",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "events_skipped",
+   "fieldtype": "Int",
+   "label": "Events Skipped",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_section",
+   "fieldtype": "Section Break",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "water_cost_per_unit",
+   "fieldtype": "Currency",
+   "label": "Water Cost per Unit"
+  },
+  {
+   "fieldname": "energy_cost_per_event",
+   "fieldtype": "Currency",
+   "label": "Energy Cost per Event"
+  },
+  {
+   "fieldname": "column_break_cost",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Irrigation Schedule",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Irrigation Schedule",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

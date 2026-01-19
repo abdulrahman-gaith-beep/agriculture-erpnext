@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "variety_name",
+  "variety_code",
+  "column_break_variety",
+  "days_to_maturity",
+  "yield_potential",
+  "characteristics_section",
+  "characteristics",
+  "disease_resistance",
+  "column_break_char",
+  "climate_suitability",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "variety_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Variety Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "variety_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Variety Code"
+  },
+  {
+   "fieldname": "column_break_variety",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "days_to_maturity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Days to Maturity"
+  },
+  {
+   "fieldname": "yield_potential",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Yield Potential",
+   "options": "\nLow\nMedium\nHigh\nVery High"
+  },
+  {
+   "fieldname": "characteristics_section",
+   "fieldtype": "Section Break",
+   "label": "Characteristics"
+  },
+  {
+   "fieldname": "characteristics",
+   "fieldtype": "Small Text",
+   "label": "Key Characteristics",
+   "description": "Color, size, taste, texture, etc."
+  },
+  {
+   "fieldname": "disease_resistance",
+   "fieldtype": "Small Text",
+   "label": "Disease Resistance",
+   "description": "Diseases this variety is resistant to"
+  },
+  {
+   "fieldname": "column_break_char",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "climate_suitability",
+   "fieldtype": "Select",
+   "label": "Climate Suitability",
+   "options": "\nTropical\nSubtropical\nTemperate\nArid\nMediterranean\nAll Climates"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Crop Variety",
+ "owner": "Administrator",
+ "permissions": [],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

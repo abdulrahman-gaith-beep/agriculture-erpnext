@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "action",
+  "priority",
+  "due_date",
+  "assigned_to",
+  "completed"
+ ],
+ "fields": [
+  {
+   "fieldname": "action",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Action",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "completed",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Completed"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Inspection Action",
+ "owner": "Administrator",
+ "permissions": [],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

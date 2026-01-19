@@ -1,0 +1,244 @@
+{
+ "actions": [],
+ "autoname": "field:common_name",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "common_name",
+  "scientific_name",
+  "pest_type",
+  "column_break_basic",
+  "severity_level",
+  "status",
+  "image",
+  "identification_section",
+  "description",
+  "identification_signs",
+  "affected_crops_section",
+  "affected_crops",
+  "favorable_conditions_section",
+  "favorable_temperature_min",
+  "favorable_temperature_max",
+  "favorable_humidity_min",
+  "favorable_humidity_max",
+  "column_break_conditions",
+  "active_season",
+  "lifecycle_days",
+  "prevention_section",
+  "prevention_methods",
+  "control_section",
+  "control_methods",
+  "treatment_task",
+  "treatment_period",
+  "economic_section",
+  "economic_threshold",
+  "potential_yield_loss"
+ ],
+ "fields": [
+  {
+   "fieldname": "common_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Common Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "scientific_name",
+   "fieldtype": "Data",
+   "label": "Scientific Name"
+  },
+  {
+   "fieldname": "pest_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Pest Type",
+   "options": "\nInsect\nMite\nNematode\nMollusk\nRodent\nBird\nWeed\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "severity_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Severity Level",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nSeasonal\nRare\nControlled"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "identification_section",
+   "fieldtype": "Section Break",
+   "label": "Identification"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "identification_signs",
+   "fieldtype": "Text Editor",
+   "label": "Identification Signs",
+   "description": "How to identify pest presence and damage"
+  },
+  {
+   "fieldname": "affected_crops_section",
+   "fieldtype": "Section Break",
+   "label": "Affected Crops"
+  },
+  {
+   "fieldname": "affected_crops",
+   "fieldtype": "Table MultiSelect",
+   "label": "Affected Crops",
+   "options": "Pest Affected Crop"
+  },
+  {
+   "fieldname": "favorable_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Favorable Conditions"
+  },
+  {
+   "fieldname": "favorable_temperature_min",
+   "fieldtype": "Float",
+   "label": "Min Temperature (C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "favorable_temperature_max",
+   "fieldtype": "Float",
+   "label": "Max Temperature (C)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "favorable_humidity_min",
+   "fieldtype": "Percent",
+   "label": "Min Humidity %"
+  },
+  {
+   "fieldname": "favorable_humidity_max",
+   "fieldtype": "Percent",
+   "label": "Max Humidity %"
+  },
+  {
+   "fieldname": "column_break_conditions",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "active_season",
+   "fieldtype": "Select",
+   "label": "Active Season",
+   "options": "\nSpring\nSummer\nFall\nWinter\nYear-Round\nWet Season\nDry Season"
+  },
+  {
+   "fieldname": "lifecycle_days",
+   "fieldtype": "Int",
+   "label": "Lifecycle (days)",
+   "description": "Days to complete one generation"
+  },
+  {
+   "fieldname": "prevention_section",
+   "fieldtype": "Section Break",
+   "label": "Prevention"
+  },
+  {
+   "fieldname": "prevention_methods",
+   "fieldtype": "Text Editor",
+   "label": "Prevention Methods"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control & Treatment"
+  },
+  {
+   "fieldname": "control_methods",
+   "fieldtype": "Text Editor",
+   "label": "Control Methods",
+   "description": "Cultural, biological, chemical control options"
+  },
+  {
+   "fieldname": "treatment_task",
+   "fieldtype": "Table",
+   "label": "Treatment Tasks",
+   "options": "Agriculture Task"
+  },
+  {
+   "fieldname": "treatment_period",
+   "fieldtype": "Int",
+   "label": "Treatment Period (days)"
+  },
+  {
+   "fieldname": "economic_section",
+   "fieldtype": "Section Break",
+   "label": "Economic Impact"
+  },
+  {
+   "fieldname": "economic_threshold",
+   "fieldtype": "Data",
+   "label": "Economic Threshold",
+   "description": "Pest density at which treatment is economically justified"
+  },
+  {
+   "fieldname": "potential_yield_loss",
+   "fieldtype": "Percent",
+   "label": "Potential Yield Loss %",
+   "description": "Maximum yield loss if uncontrolled"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Pest",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

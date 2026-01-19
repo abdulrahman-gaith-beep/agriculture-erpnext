@@ -1,6 +1,15 @@
 {
- "charts": [],
- "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Reports & Masters\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Farms & Land\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Crop Management\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Analytics\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Inputs & Diseases\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 4}}]",
+ "charts": [
+  {
+   "chart_name": "Crop Cycles by Status",
+   "label": "Crop Cycles by Status"
+  },
+  {
+   "chart_name": "Monthly Harvests",
+   "label": "Monthly Harvests"
+  }
+ ],
+ "content": "[{\"type\": \"onboarding\", \"data\": {\"onboarding_name\": \"Agriculture\", \"col\": 12}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Crop Cycles by Status\", \"col\": 6}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Monthly Harvests\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Quick Access\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Active Crop Cycles\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Farms\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Recent Harvests\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Pending Inspections\", \"col\": 3}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Reports & Masters\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Farms & Land\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Crop Management\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Operations\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Analytics & Reports\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Inputs & Pests\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 4}}]",
  "creation": "2020-03-02 17:23:34.339274",
  "docstatus": 0,
  "doctype": "Workspace",
@@ -74,11 +83,11 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Disease",
+   "label": "Crop Inspection",
    "link_count": 0,
-   "link_to": "Disease",
+   "link_to": "Crop Inspection",
    "link_type": "DocType",
-   "onboard": 0,
+   "onboard": 1,
    "type": "Link"
   },
   {
@@ -112,12 +121,45 @@
    "type": "Link"
   },
   {
+   "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Analytics",
+   "label": "Irrigation Schedule",
+   "link_count": 0,
+   "link_to": "Irrigation Schedule",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Analytics & Reports",
    "link_count": 0,
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Crop Cycle Performance",
+   "link_count": 0,
+   "link_to": "Crop Cycle Performance",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Harvest Analysis",
+   "link_count": 0,
+   "link_to": "Harvest Analysis",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
   },
   {
    "dependencies": "",
@@ -177,7 +219,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Inputs & Diseases",
+   "label": "Inputs & Pests",
    "link_count": 0,
    "onboard": 0,
    "type": "Card Break"
@@ -191,6 +233,28 @@
    "link_to": "Fertilizer",
    "link_type": "DocType",
    "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Pest",
+   "link_count": 0,
+   "link_to": "Pest",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Disease",
+   "link_count": 0,
+   "link_to": "Disease",
+   "link_type": "DocType",
+   "onboard": 0,
    "type": "Link"
   },
   {
@@ -255,6 +319,14 @@
    "doc_view": "List",
    "label": "Recent Harvests",
    "link_to": "Harvest Record",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Pending Inspections",
+   "link_to": "Crop Inspection",
+   "stats_filter": "[['status', '=', 'Action Required']]",
    "type": "DocType"
   }
  ],

@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "crop"
+ ],
+ "fields": [
+  {
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crop",
+   "options": "Crop",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Pest Affected Crop",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

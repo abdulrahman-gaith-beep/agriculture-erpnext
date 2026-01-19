@@ -1,0 +1,23 @@
+{
+ "chart_name": "Monthly Harvests",
+ "chart_type": "Count",
+ "creation": "2024-01-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "Harvest Record",
+ "filters_json": "[]",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Monthly Harvests",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "based_on": "harvest_date",
+ "time_interval": "Monthly",
+ "timeseries": 1,
+ "timespan": "Last Year",
+ "type": "Bar"
+}

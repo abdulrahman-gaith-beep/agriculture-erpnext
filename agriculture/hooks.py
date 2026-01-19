@@ -122,9 +122,16 @@ scheduler_events = {
 	"daily": [
 		"agriculture.agriculture.tasks.check_crop_cycle_status",
 		"agriculture.agriculture.tasks.check_analysis_reminders",
+		"agriculture.agriculture.tasks.check_irrigation_schedules",
+		"agriculture.agriculture.tasks.check_equipment_maintenance",
+		"agriculture.agriculture.tasks.check_pesticide_safety_periods",
 	],
 	"weekly": [
 		"agriculture.agriculture.tasks.calculate_crop_cycle_financials",
+		"agriculture.agriculture.tasks.generate_crop_health_summary",
+	],
+	"monthly": [
+		"agriculture.agriculture.tasks.generate_monthly_reports",
 	],
 }
 
@@ -185,23 +192,35 @@ scheduler_events = {
 
 global_search_doctypes = {
 	"Agriculture": [
-		{'doctype': 'Farm', 'index': 1},
-		{'doctype': 'Crop', 'index': 2},
-		{'doctype': 'Crop Cycle', 'index': 3},
-		{'doctype': 'Harvest Record', 'index': 4},
-		{'doctype': 'Fertilizer Application', 'index': 5},
-		{'doctype': 'Fertilizer', 'index': 6},
-		{'doctype': 'Disease', 'index': 7},
-		{'doctype': 'Weather', 'index': 8},
-		{'doctype': 'Soil Analysis', 'index': 9},
-		{'doctype': 'Water Analysis', 'index': 10},
-		{'doctype': 'Plant Analysis', 'index': 11},
-		{'doctype': 'Soil Texture', 'index': 12},
-		{'doctype': 'Agriculture Analysis Criteria', 'index': 13}
+		# Core Management
+		{"doctype": "Farm", "index": 1},
+		{"doctype": "Crop", "index": 2},
+		{"doctype": "Crop Cycle", "index": 3},
+		{"doctype": "Crop Calendar", "index": 4},
+		# Operations
+		{"doctype": "Harvest Record", "index": 5},
+		{"doctype": "Crop Inspection", "index": 6},
+		{"doctype": "Fertilizer Application", "index": 7},
+		{"doctype": "Pesticide Application", "index": 8},
+		{"doctype": "Irrigation Schedule", "index": 9},
+		{"doctype": "Labor Activity", "index": 10},
+		# Sales
+		{"doctype": "Produce Sale", "index": 11},
+		# Resources
+		{"doctype": "Farm Equipment", "index": 12},
+		{"doctype": "Fertilizer", "index": 13},
+		{"doctype": "Pest", "index": 14},
+		{"doctype": "Disease", "index": 15},
+		# Analytics
+		{"doctype": "Weather", "index": 16},
+		{"doctype": "Soil Analysis", "index": 17},
+		{"doctype": "Water Analysis", "index": 18},
+		{"doctype": "Plant Analysis", "index": 19},
+		{"doctype": "Soil Texture", "index": 20},
+		{"doctype": "Agriculture Analysis Criteria", "index": 21},
 	]
 }
 
 domains = {
-	'Agriculture': 'agriculture.agriculture.agriculture',
+	"Agriculture": "agriculture.agriculture.agriculture",
 }
-

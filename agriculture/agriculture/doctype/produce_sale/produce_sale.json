@@ -1,0 +1,409 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sale_section",
+  "naming_series",
+  "sale_date",
+  "sale_type",
+  "column_break_sale",
+  "status",
+  "farm",
+  "sales_person",
+  "customer_section",
+  "customer_name",
+  "customer_type",
+  "customer_contact",
+  "column_break_customer",
+  "customer_address",
+  "delivery_location",
+  "items_section",
+  "items",
+  "totals_section",
+  "total_quantity",
+  "quantity_uom",
+  "column_break_totals",
+  "subtotal",
+  "discount_percentage",
+  "discount_amount",
+  "total_amount",
+  "payment_section",
+  "payment_status",
+  "payment_method",
+  "payment_date",
+  "column_break_payment",
+  "amount_paid",
+  "amount_pending",
+  "payment_reference",
+  "delivery_section",
+  "delivery_status",
+  "delivery_date",
+  "delivery_method",
+  "column_break_delivery",
+  "vehicle_number",
+  "driver_name",
+  "delivery_notes",
+  "quality_section",
+  "overall_quality_grade",
+  "quality_certificate",
+  "organic_certified",
+  "column_break_quality",
+  "certification_number",
+  "quality_notes",
+  "notes_section",
+  "terms_and_conditions",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sale_section",
+   "fieldtype": "Section Break",
+   "label": "Sale Information"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "SALE-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "sale_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sale Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sale_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sale Type",
+   "options": "\nDirect Sale\nWholesale\nRetail\nContract Sale\nAuction\nExport\nOnline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_sale",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nConfirmed\nPartially Delivered\nDelivered\nPaid\nCancelled"
+  },
+  {
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Farm",
+   "options": "Farm"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Data",
+   "label": "Sales Person"
+  },
+  {
+   "fieldname": "customer_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "\nIndividual\nWholesaler\nRetailer\nRestaurant/Hotel\nProcessor\nExporter\nGovernment\nCooperative"
+  },
+  {
+   "fieldname": "customer_contact",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "column_break_customer",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Small Text",
+   "label": "Customer Address"
+  },
+  {
+   "fieldname": "delivery_location",
+   "fieldtype": "Data",
+   "label": "Delivery Location"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Sale Items",
+   "options": "Produce Sale Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "Kilogram",
+   "fieldname": "quantity_uom",
+   "fieldtype": "Link",
+   "label": "Quantity UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_totals",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_percentage",
+   "fieldtype": "Percent",
+   "label": "Discount %"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "default": "Unpaid",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Payment Status",
+   "options": "Unpaid\nPartially Paid\nPaid\nOverdue"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "\nCash\nBank Transfer\nCheck\nMobile Money\nCredit\nOnline Payment"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "column_break_payment",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid"
+  },
+  {
+   "fieldname": "amount_pending",
+   "fieldtype": "Currency",
+   "label": "Amount Pending",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_reference",
+   "fieldtype": "Data",
+   "label": "Payment Reference"
+  },
+  {
+   "fieldname": "delivery_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery Details",
+   "collapsible": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "label": "Delivery Status",
+   "options": "Pending\nIn Transit\nDelivered\nReturned"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "delivery_method",
+   "fieldtype": "Select",
+   "label": "Delivery Method",
+   "options": "\nPickup\nFarm Delivery\nThird Party Logistics\nOwn Vehicle"
+  },
+  {
+   "fieldname": "column_break_delivery",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "delivery_notes",
+   "fieldtype": "Small Text",
+   "label": "Delivery Notes"
+  },
+  {
+   "fieldname": "quality_section",
+   "fieldtype": "Section Break",
+   "label": "Quality & Certification",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "overall_quality_grade",
+   "fieldtype": "Select",
+   "label": "Overall Quality Grade",
+   "options": "\nPremium\nGrade A\nGrade B\nGrade C\nMixed"
+  },
+  {
+   "fieldname": "quality_certificate",
+   "fieldtype": "Attach",
+   "label": "Quality Certificate"
+  },
+  {
+   "default": "0",
+   "fieldname": "organic_certified",
+   "fieldtype": "Check",
+   "label": "Organic Certified"
+  },
+  {
+   "fieldname": "column_break_quality",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "organic_certified",
+   "fieldname": "certification_number",
+   "fieldtype": "Data",
+   "label": "Certification Number"
+  },
+  {
+   "fieldname": "quality_notes",
+   "fieldtype": "Small Text",
+   "label": "Quality Notes"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Small Text",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Produce Sale",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Agriculture",
+ "name": "Produce Sale",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agriculture User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Agriculture",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
